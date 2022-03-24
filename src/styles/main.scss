@@ -1,0 +1,117 @@
+@import 'breakpoints';
+@import 'mixins';
+@import 'general';
+
+$color-mustard: #CCA361;
+$color-tan: #FDF8F0;
+$color-navy: #485867;
+$color-lightblue: #D3E0D7;
+
+.btn {
+  &-mustard {
+    background-color: $color-mustard;
+    color: white;
+    text-transform: uppercase;
+  }
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-weight: 600;
+  display: inline-block;
+  letter-spacing: 1px;
+  font-size: 12px;
+  transition: .3s;
+  margin-bottom: 30px;
+
+  &:hover {
+    background-color: black;
+  }
+}
+
+.lockup {
+  text-align: center;
+
+  @include md {
+    text-align: left;
+  }
+
+  img {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+.copy {
+  text-align: center;
+
+  @include md {
+    padding-top: 30px;
+    text-align: left;
+  }
+}
+
+section {
+  width: 100%;
+  padding: 8px;
+}
+
+.section-logo {
+  text-align: center;
+  background-color: $color-navy;
+
+  .logo {
+    padding: 30px;
+  }
+  
+  img {
+    max-width: 150px;
+  }
+}
+
+.section-unlock-meaningful-conversation {
+  z-index: 1;
+  background-color: $color-navy;
+
+  img {
+    max-width: 80%;
+  }
+
+  h1 {
+    color: white;
+  }
+
+  p {
+    color: $color-lightblue;
+  }
+
+  @include md {
+    img {
+        margin-bottom: -170px;
+      }
+  }
+}
+
+.section-create-your-own-collections {
+  background-color: $color-tan;
+  z-index: 2;
+
+  @include md {
+    padding-top: 120px;
+
+    .copy {
+      padding-top: 150px;
+    }
+  }
+}
+
+.section-build-deeper-bonds {
+  background-color: $color-tan;
+
+  @include md {
+    padding-top: 30px;
+
+    .copy {
+      padding-top: 150px;
+    }
+  }
+}

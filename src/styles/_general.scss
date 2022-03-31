@@ -8,17 +8,56 @@ body {
   padding: 0;
 }
 
-h1, h2 {
+h1 {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
-  font-size: 48px;
-  line-height: 55px;
-  font-weight: 600;
   margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 55px;
+  
+  @include md {
+    font-size: 48px;
+    font-weight: 600;
+  }
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  
+  @include md {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 55px;
+  }
 }
 
 p {
   font-size: 18px;
   line-height: 26px;
   margin-bottom: 20px;
+}
+
+section {
+  width: 100%;
+  padding: 8px;
+
+  @include md {
+    padding: 0;
+  }
+}
+
+.row {
+  > div {
+    z-index: 2;
+  }
+
+  .copy-container {
+    z-index: 3;
+  }
 }

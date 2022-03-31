@@ -1,14 +1,15 @@
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     rename = require('gulp-rename');
-var autoprefixer = require('gulp-autoprefixer');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var imagemin = require('gulp-imagemin'),
+const autoprefixer = require('gulp-autoprefixer');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const imagemin = require('gulp-imagemin'),
     cache = require('gulp-cache');
-var minifycss = require('gulp-minify-css');
-var sass = require('gulp-sass');
-var browserSync = require('browser-sync');
+const minifycss = require('gulp-minify-css');
+const sass = require('gulp-sass');
+const browserSync = require('browser-sync');
+const babel = require('gulp-babel');
 
 gulp.task('browser-sync', function() {
   browserSync({
@@ -51,6 +52,9 @@ gulp.task('scripts', function(){
         console.log(error.message);
         this.emit('end');
     }}))
+    // .pipe(babel({
+    //   presets: ['@babel/preset-env']
+    // }))
     .pipe(concat('main.js'))
     .pipe(gulp.dest('dist/scripts/'))
     .pipe(rename({suffix: '.min'}))

@@ -1,24 +1,17 @@
 import './styles/main.scss';
-const mailchimp = require("@mailchimp/mailchimp_marketing");
 const btns = document.querySelectorAll('.btn');
-const API_KEY = 'd344d292217d59fd0202174f364a257f-us14';
-const API_SERVER = 'us14';
-const AUDIENCE_ID = 'a6a081aa9e';
-const email = 'Ebony_Brekke@gmail.com';
 
-mailchimp.setConfig({
-  apiKey: API_KEY,
-  server: API_SERVER,
+// Helper function
+const domReady = (cb) => {
+  document.readyState === 'interactive' || document.readyState === 'complete'
+    ? cb()
+    : document.addEventListener('DOMContentLoaded', cb);
+};
+
+domReady(() => {
+  // Display body when DOM is loaded
+  document.body.style.visibility = 'visible';
 });
-
-console.log('hey');
-
-async function run() {
-  const response = await mailchimp.ping.get();
-  console.log(response);
-}
-
-run();
 
 function getMobileOperatingSystem() {
   const userAgent = navigator.userAgent || navigator.vendor || window.opera;

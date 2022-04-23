@@ -1,5 +1,5 @@
 import './styles/main.scss';
-const btns = document.querySelectorAll('.btn');
+const btns = document.querySelectorAll('.btn-download');
 
 // Helper function
 const domReady = (cb) => {
@@ -8,10 +8,14 @@ const domReady = (cb) => {
     : document.addEventListener('DOMContentLoaded', cb);
 };
 
-domReady(() => {
-  // Display body when DOM is loaded
-  document.body.style.visibility = 'visible';
-});
+function zoomOutMobile() {
+  var viewport = document.querySelector('meta[name="viewport"]');
+
+  if ( viewport ) {
+    // viewport.content = "initial-scale=0.9";
+    // viewport.content = "width=1200";
+  }
+}
 
 function getMobileOperatingSystem() {
   const userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -42,3 +46,10 @@ if (getMobileOperatingSystem() === 'ios') {
     e.outerHTML = '<img class="badge" src="./dist/images/google-play-badge.png" alt="Download on the Google Play Store">';
   })
 }
+
+domReady(() => {
+  // Display body when DOM is loaded
+  document.body.style.visibility = 'visible';
+});
+
+zoomOutMobile();

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 @import 'breakpoints';
 @import 'mixins';
 @import 'general';
@@ -48,6 +49,31 @@ $color-flat-black: #707070;
   }
 }
 
+.desktop-only {
+  display: none;
+  
+  @include md {
+    display: block;
+  }
+}
+
+.mobile-only {
+  display: block;
+  
+  @include md {
+    display: none;
+  }
+}
+
+.copy-align-center {
+  max-width: 80%;
+  margin: 0 auto;
+
+  @include md {
+    max-width: 100%;
+  }
+}
+
 
 .copy {
   text-align: center;
@@ -84,12 +110,7 @@ $color-flat-black: #707070;
   position: absolute;
   width: 100%;
   height: 100%;
-  margin: -8px;
   overflow: hidden;
-
-  @include sm {
-    width: 102%;
-  }
 
   @include md {
     width: 100%;
@@ -113,6 +134,12 @@ $color-flat-black: #707070;
 .dark {
   background-color: $color-navy;
   color: white;
+}
+
+#mce-responses {
+  .response {
+    padding-bottom: 30px;
+  }
 }
 
 .section-unlock-meaningful-conversation {
@@ -241,9 +268,11 @@ $color-flat-black: #707070;
   background-color: $color-tan;
   position: relative;
   overflow: hidden;
+  padding-bottom: 100px;
 
   @include md {
     padding-top: 30px;
+    padding-bottom: 150px;
 
     .copy {
       padding-top: 150px;
@@ -292,6 +321,8 @@ $color-flat-black: #707070;
 
 .section-dont-miss-out {
   text-align: center;
+  position: relative;
+  overflow: hidden;
 
   .email-form-grid {
     width: 100%;
@@ -348,6 +379,68 @@ $color-flat-black: #707070;
       margin-left: -108px;
       -webkit-appearance: none;
       margin-bottom: 0;
+    }
+  }
+
+  .blob-1 {
+    max-width: 200px;
+    top: 50px;
+    left: -90px;
+    float: left;
+
+    @include md {
+      max-width: 220px;
+      top: 20px;
+      left: -150px;
+    }
+  }
+
+  .blob-2 {
+    max-width: 200px;
+    top: -70px;
+    right: -90px;
+    float: right;
+
+    @include md {
+      top: 50px;
+      right: -90px;
+    }
+  }
+
+  .line-1 {
+    max-width: 190px;
+    left: -50px;
+    top: -270px;
+    float: left;
+
+    @include md {
+      left: -250px;
+      top: -50px;
+    }
+  }
+}
+
+.section-footer {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: $color-tan;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  @include md {
+    text-align: left;
+  }
+
+  small {
+    padding-bottom: 16px;
+  }
+
+  .social-icons {
+    text-decoration: none;
+
+    img {
+      width: 25px;
     }
   }
 }

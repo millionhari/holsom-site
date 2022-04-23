@@ -5,7 +5,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry : "./src/index.js",
   module: {
     rules: [
@@ -33,9 +33,6 @@ module.exports = {
       patterns: [
         { from: "src/images", to: "images" }
       ],
-    }),
-    new HtmlWebpackPlugin({
-      template: './index.html'
     })
   ],
   resolve: {
@@ -62,6 +59,6 @@ module.exports = {
 
     // Public path is root of content base
     publicPath: '/',
-
-  }
+  },
+  watch: true
 }
